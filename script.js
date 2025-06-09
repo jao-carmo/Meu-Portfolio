@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('discipline-search');
 
     // Função para carregar disciplinas
-    // Função para carregar disciplinas
     function loadDisciplines(disciplines = disciplinesData, yearFilter = 'all') {
         disciplinesContainer.innerHTML = '';
 
@@ -147,21 +146,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         filteredDisciplines.forEach((discipline, index) => {
-            const card = document.createElement('div');
-            card.className = 'discipline-card';
-            card.style.animationDelay = `${index * 0.1}s`;
-            card.innerHTML = `
-            <div class="discipline-icon">
-                <i class="fas ${discipline.icon}"></i>
-            </div>
-            <h3>${discipline.name}</h3>
-            <p>Professor: ${discipline.professor}</p>
-            <p class="discipline-description">${discipline.shortDescription}</p>
-            <a href="disciplinas/${discipline.id}.html" class="discipline-link"></a>
-        `;
-            disciplinesContainer.appendChild(card);
+            const cardLink = document.createElement('a'); // Create an anchor element
+            cardLink.href = `disciplinas/${discipline.id}.html`; // Set the href
+            cardLink.className = 'discipline-card'; // Apply existing styling
+            cardLink.style.animationDelay = `${index * 0.1}s`;
+            cardLink.innerHTML = `
+                <div class="discipline-icon">
+                    <i class="fas ${discipline.icon}"></i>
+                </div>
+                <h3>${discipline.name}</h3>
+                <p>Professor: ${discipline.professor}</p>
+                <p class="discipline-description">${discipline.shortDescription}</p>
+            `;
+            disciplinesContainer.appendChild(cardLink); // Append the clickable card
         });
     }
+
     // Eventos para filtros por ano
     document.querySelectorAll('.year-filter').forEach(button => {
         button.addEventListener('click', function () {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             loadDisciplines(filteredDisciplines, yearFilter);
         });
     });
-    // Função de pesquisa
+
     // Função de pesquisa
     function searchDisciplines() {
         const searchTerm = searchInput.value.toLowerCase();

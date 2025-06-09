@@ -4,22 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | João Pedro Epaminondas do Carmo</title>
+    <title>Portfólio | João Pedro - Desenvolvedor</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header class="navbar">
         <nav>
-            <div class="logo">Carmo</div>
+            <div class="logo">
+                <span class="logo-code">&lt;</span>JPC<span class="logo-code">/&gt;</span>
+            </div>
             <ul class="nav-links">
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#disciplines">Disciplinas</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#about"><span class="nav-number">01.</span> Sobre</a></li>
+                <li><a href="#disciplines"><span class="nav-number">02.</span> Disciplinas</a></li>
+                <li><a href="#projects"><span class="nav-number">03.</span> Projetos</a></li>
+                <li><a href="#contact"><span class="nav-number">04.</span> Contato</a></li>
+                <li><a href="#" class="btn-resume">Currículo</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -32,10 +38,12 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content">
+                <p class="hero-subtitle">Olá, meu nome é</p>
                 <h1 class="typing-effect"></h1>
-                <p>Análise e Desenvolvimento de Sistemas - AMS</p>
-                <p>FATEC Jales</p>
-                <a href="#about" class="btn pulse">Conheça minha jornada</a>
+                <h2 class="hero-title">Desenvolvedor Full Stack</h2>
+                <p class="hero-description">Sou estudante de Análise e Desenvolvimento de Sistemas na FATEC Jales,
+                    apaixonado por criar soluções tecnológicas inovadoras e eficientes.</p>
+                <a href="#projects" class="btn pulse">Ver meus projetos</a>
             </div>
             <div class="scroll-indicator">
                 <div class="mouse">
@@ -47,22 +55,35 @@
 
         <section id="about" class="about-section">
             <div class="section-header">
-                <h2>Quem sou eu</h2>
+                <h2><span class="section-number">01.</span> Sobre Mim</h2>
                 <div class="underline"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Me chamo João Pedro Epaminondas do Carmo, mas gosto de ser chamado de Carmo. Tenho 18 anos, sou
-                        aluno da FATEC Jales e atualmente curso Análise e Desenvolvimento de Sistemas (AMS). Apaixonado
-                        por tecnologia e desenvolvimento, estou em constante evolução, buscando crescer tanto no lado
-                        técnico quanto pessoal.</p>
+                    <p>Me chamo João Pedro Epaminondas do Carmo, tenho 18 anos e sou um entusiasta da tecnologia com
+                        foco em desenvolvimento web e mobile. Atualmente cursando Análise e Desenvolvimento de Sistemas
+                        na FATEC Jales.</p>
 
-                    <div class="progress-container">
-                        <h4>Progresso no Curso</h4>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
+                    <p>Minha jornada na programação começou quando eu tinha 15 anos e desde então venho me
+                        especializando em tecnologias como:</p>
+
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Front-end</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
+                                <li><i class="fas fa-check"></i> JavaScript</li>
+                                <li><i class="fas fa-check"></i> React</li>
+                            </ul>
                         </div>
-                        <span>50% completo</span>
+                        <div class="skill-category">
+                            <h4>Back-end</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Node.js</li>
+                                <li><i class="fas fa-check"></i> C</li>
+                                <li><i class="fas fa-check"></i> SQL</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="about-image">
@@ -75,9 +96,42 @@
             </div>
         </section>
 
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <h2><span class="section-number">02.</span> Projetos Recentes</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project1.jpg" alt="Ponto Fácil">
+                    </div>
+                    <div class="project-info">
+                        <h3>Ponto Fácil</h3>
+                        <p>Plataforma web criada para facilitar o controle de ponto e automatizar rotinas
+                            administrativas em instituições.</p>
+                        <div class="project-techs">
+                            <span>WindownsForms</span>
+                            <span>C#</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jao-carmo/projeto-tcc.git" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="text-center">
+                <a href="#" class="btn">Ver todos os projetos</a>
+            </div>
+        </section>
+
         <section id="disciplines" class="disciplines-section">
             <div class="section-header">
-                <h2>Disciplinas</h2>
+                <h2><span class="section-number">03.</span> Disciplinas Acadêmicas</h2>
                 <div class="underline"></div>
             </div>
             <div class="disciplines-filter">
@@ -95,38 +149,33 @@
 
         <section id="contact" class="contact-section">
             <div class="section-header">
-                <h2>Contato</h2>
+                <h2><span class="section-number">04.</span> Vamos Conversar</h2>
                 <div class="underline"></div>
             </div>
+
             <div class="contact-content">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>joaoepdocarmo@gmail.com</p>
+                <div class="contact-text">
+                    <h3>Estou disponível para oportunidades</h3>
+                    <p>Se você tem um projeto que deseja começar ou apenas quer dizer olá, ficarei feliz em responder!
+                    </p>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-e-do-carmo-383092312/"
-                        target="_blank">linkedin.com/in/joão-pedro-e-do-carmo</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/jao-carmo" target="_blank">github.com/jao-carmo</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3>WhatsApp</h3>
-                    <p>(17) 99758-6977</p>
+
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -134,12 +183,18 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 João Pedro Epaminondas do Carmo. Todos os direitos reservados.</p>
+            <div class="footer-credits">
+                <p>Projetado e construído por João Pedro Epaminondas do Carmo</p>
+                <p>Todos os direitos reservados &copy; 2025</p>
+            </div>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-e-do-carmo-383092312/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/jao-carmo" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:joaoepdocarmo@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-e-do-carmo-383092312/" target="_blank"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/jao-carmo" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:joaoepdocarmo@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/5517997586977" target="_blank" aria-label="WhatsApp"><i
+                        class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
