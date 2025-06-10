@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
             navLinks.classList.remove('active');
         });
     });
-
+    document.querySelector('.btn-resume').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(this.href, '_blank');
+    });
     // Efeito de digitação no título
     const heroTitle = document.querySelector('.typing-effect');
     const titleText = "João Pedro Epaminondas do Carmo";
