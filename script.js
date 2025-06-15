@@ -68,6 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
             ano: 4
         },
         {
+            id: "projeto-integrador-I",
+            name: "Projeto Integrador I",
+            professor: "Jefferson Antonio Ribeiro Passerini",
+            icon: "fa-users-cog",
+            shortDescription: "Desenvolvimento de projetos",
+            ano: 4
+        },
+        {
             id: "ihc",
             name: "Interação Humano Computador",
             professor: "Lígia Rodrigues Prete",
@@ -101,10 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             id: "gestao-projetos",
-            name: "Gestão Ágil de Projetos",
+            name: "Gestão Ágil de Projeto de Software",
             professor: "André Zagato Gomes",
             icon: "fa-tasks",
-            shortDescription: "Metodologias ágeis para gestão de projetos",
+            shortDescription: "Metodologias ágeis para gestão de projeto de software",
             ano: 4
         },
         {

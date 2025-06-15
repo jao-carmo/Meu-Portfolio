@@ -1,23 +1,419 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco de Dados Avançado | Portfólio João Pedro</title>
+    <title>Lingua Inglesa I | Portfólio João Pedro</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #64FFDA;
+            --secondary-color: #0A192F;
+            --dark-blue: #112240;
+            --light-gray: #CCD6F6;
+            --dark-gray: #8892B0;
+            --dark-bg: #020C1B;
+            --card-bg: #112240;
+            --text-color: #E6F1FF;
+            --text-secondary: #8892B0;
+            --font-primary: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+            padding: 1rem 2rem;
+        }
+
+        .navbar nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo-code {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light-gray);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-number {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .btn-resume {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-left: 1.5rem;
+        }
+
+        .btn-resume:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 2px;
+            background-color: var(--primary-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Discipline Hero Section */
+        .discipline-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            margin-top: 80px;
+        }
+
+        .discipline-hero-content {
+            max-width: 800px;
+        }
+
+        .discipline-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .discipline-hero h1 {
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+
+        .discipline-hero p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+            padding: 1rem 2rem;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Discipline Content Section */
+        .discipline-content {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .discipline-content h2 {
+            text-align: center;
+        }
+
+        .underline {
+            width: 100px;
+            height: 1px;
+            background-color: var(--dark-gray);
+            margin: 1rem auto 3rem;
+            position: relative;
+        }
+
+        .underline::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            top: -0.5px;
+            left: 25px;
+        }
+
+        .discipline-details {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .discipline-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .discipline-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .discipline-section h3 {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .discipline-section h3 i {
+            color: var(--primary-color);
+        }
+
+        .discipline-section ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+
+        .discipline-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--light-gray);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .hamburger.active .line:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .line:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .discipline-hero {
+                height: auto;
+                padding: 8rem 2rem 4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .discipline-content {
+                padding: 4rem 1rem;
+            }
+
+            .discipline-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header class="navbar">
         <nav>
-            <div class="logo">Carmo</div>
+            <div class="logo">
+                <span class="logo-code">&lt;</span>JPC<span class="logo-code">/&gt;</span>
+            </div>
             <ul class="nav-links">
-                <li><a href="../index.html#about">Sobre</a></li>
-                <li><a href="../index.html#disciplines">Disciplinas</a></li>
-                <li><a href="../index.html#contact">Contato</a></li>
+                <li><a href="../index.html#about"><span class="nav-number">01.</span> Sobre</a></li>
+                <li><a href="../index.html#disciplines"><span class="nav-number">02.</span> Disciplinas</a></li>
+                <li><a href="../index.html#projects"><span class="nav-number">03.</span> Projetos</a></li>
+                <li><a href="../index.html#contact"><span class="nav-number">04.</span> Contato</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -28,13 +424,14 @@
     </header>
 
     <main class="discipline-page">
-        <section class="discipline-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/database-bg.jpg') no-repeat center center/cover;">
+        <section class="discipline-hero"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/english-bg.jpg') no-repeat center center/cover;">
             <div class="discipline-hero-content">
                 <div class="discipline-icon">
-                    <i class="fas fa-database"></i>
+                    <i class="fas fa-language"></i>
                 </div>
-                <h1>Banco de Dados Avançado</h1>
-                <p>Professor: Alexandre Aparecido Bernardes</p>
+                <h1>Língua Inglesa I</h1>
+                <p>Professor: Carlos Alberto Gonçalves da Silva</p>
                 <a href="../index.html#disciplines" class="btn">Voltar para Disciplinas</a>
             </div>
         </section>
@@ -43,47 +440,64 @@
             <div class="container">
                 <h2>Conteúdo da Disciplina</h2>
                 <div class="underline"></div>
-                
+
                 <div class="discipline-details">
                     <div class="discipline-section">
                         <h3><i class="fas fa-book"></i> Ementa</h3>
-                        <p>Estudo dos princípios de bancos de dados relacionais. Criação e manipulação de estruturas de dados utilizando SQL. Desenvolvimento de procedimentos armazenados (procedures), funções definidas pelo usuário (functions), visualizações (views) e controle de acesso (DCL). Aplicação de boas práticas no uso de comandos SQL para garantir integridade, segurança e eficiência no acesso aos dados.</p>
+                        <p>A disciplina de Língua Inglesa I tem como objetivo introduzir os alunos à compreensão e uso
+                            básico da língua inglesa, com foco em leitura, vocabulário técnico e comunicação no contexto
+                            profissional de tecnologia da informação e áreas afins.</p>
                     </div>
-                    
+
                     <div class="discipline-section">
                         <h3><i class="fas fa-list-check"></i> Tópicos Abordados</h3>
                         <ul>
-                            <li>Conceitos de banco de dados relacional</li>
-                            <li>Comandos SQL básicos (DDL e DML)</li>
-                            <li>Comandos de controle de acesso com DCL (GRANT e REVOKE)</li>
-                            <li>Criação e uso de views</li>
-                            <li>Criação e execução de stored procedures</li>
-                            <li>Criação e uso de funções definidas pelo usuário</li>
-                            <li>Diferenças entre procedures e funções</li>
-                            <li>Uso de funções em consultas SQL</li>
-                            <li>Boas práticas de organização e segurança no banco de dados</li>
+                            <li>Saudações e apresentações pessoais</li>
+                            <li>Vocabulário técnico em TI</li>
+                            <li>Verbo to be: afirmativa, negativa e interrogativa</li>
+                            <li>Pronomes pessoais</li>
+                            <li>Estruturas de frases simples</li>
+                            <li>Artigos e preposições</li>
+                            <li>Reading: interpretação de textos técnicos e cotidianos</li>
+                            <li>Listening: compreensão de áudios básicos</li>
+                            <li>Writing: elaboração de e-mails e mensagens simples</li>
+                            <li>Expressões comuns no ambiente profissional</li>
                         </ul>
                     </div>
-                    
+
                     <div class="discipline-section">
                         <h3><i class="fas fa-chalkboard-teacher"></i> Metodologia</h3>
-                        <p>A disciplina é conduzida de forma prática e expositiva, com aulas que combinam teoria e exercícios diretamente aplicados em ambientes de banco de dados. Os alunos têm contato direto com SGBDs como MySQL ou PostgreSQL para desenvolver os comandos aprendidos, criando procedures, functions, views e aplicando controle de acesso com DCL. São realizadas atividades práticas individuais e em grupo, com projetos simples e estudos de caso que simulam situações reais do mercado. A avaliação inclui exercícios práticos, testes teóricos e análise de código SQL produzido durante as aulas.</p>
+                        <ul>
+                            <li>Aulas expositivas com foco em vocabulário técnico</li>
+                            <li>Leitura e interpretação de textos reais da área de TI</li>
+                            <li>Prática de escuta (listening) com áudios e vídeos selecionados</li>
+                            <li>Exercícios de escrita de e-mails e textos simples</li>
+                            <li>Atividades práticas em grupo e individuais</li>
+                            <li>Avaliações orais e escritas</li>
+                        </ul>
                     </div>
-                    
+
                     <div class="discipline-section">
                         <h3><i class="fas fa-lightbulb"></i> Aprendizados</h3>
-                        <p>Até o momento, a disciplina proporcionou o entendimento da estrutura de um banco de dados relacional, bem como a criação de elementos reutilizáveis como procedures e funções, úteis para automatizar operações no banco. Também foi possível aprender a construir views, que ajudam a simplificar e organizar consultas complexas, e a aplicar comandos de DCL para controlar o acesso aos dados de forma segura. Além disso, os exercícios reforçaram a lógica de programação aplicada ao SQL, contribuindo para uma visão mais ampla e segura no desenvolvimento de sistemas que utilizam banco de dados.</p>
+                        <ul>
+                            <p>Compreender e utilizar expressões básicas em inglês, ler e interpretar textos simples e
+                                técnicos, elaborar pequenas produções textuais (como e-mails) e ter maior segurança na
+                                comunicação escrita e oral no contexto profissional da área de tecnologia.</p>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 João Pedro Epaminondas do Carmo. Todos os direitos reservados.</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/joão-pedro-e-do-carmo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://linkedin.com/in/joão-pedro-e-do-carmo" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/jao-carmo" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="mailto:joaoepdocarmo@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
@@ -92,4 +506,5 @@
 
     <script src="../script.js"></script>
 </body>
+
 </html>
